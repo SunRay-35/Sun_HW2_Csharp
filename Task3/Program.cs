@@ -19,6 +19,16 @@ int PromptInt(string strDescription) // Ввод целого числа
     }
 }
 
+int TakeLastDigit(int intNumber) // Возвращает остаток деления целого числа на 10
+{
+    return Math.Abs((intNumber % 10));
+}
+
+int ReduceCapacity(int intNumber) // Уменьшает разрядность целого числа на 1
+{
+    return (intNumber / 10);
+}
+
 int WhatDigitCapacity(int intNumber) // Определение количества разрядов числа
 {
     if (intNumber == 0)
@@ -31,21 +41,11 @@ int WhatDigitCapacity(int intNumber) // Определение количест�
         int count = 0;
         while (intNumber > 0)
         {
-            intNumber /= 10;
+            intNumber = ReduceCapacity(intNumber);
             count++;
         }
         return count;
     }
-}
-
-int TakeLastDigit(int intNumber) // Возвращает остаток деления целого числа на 10
-{
-    return Math.Abs((intNumber % 10));
-}
-
-int ReduceCapacity(int intNumber) // Уменьшает разрядность целого числа на 1
-{
-    return (intNumber / 10);
 }
 
 System.Console.Clear();

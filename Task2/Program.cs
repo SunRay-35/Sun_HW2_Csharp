@@ -26,4 +26,5 @@ int ReduceCapacity(int intNumber) // Уменьшает разрядность �
 
 System.Console.Clear();
 int intNumber = RandomInt(3);
-System.Console.WriteLine($"Число, состоящее из первой и третьей цифры трехзначного числа {intNumber}, равно {TakeLastDigit(ReduceCapacity(ReduceCapacity(intNumber)))}{TakeLastDigit(intNumber)}");
+int intTemp = int.Parse($"{TakeLastDigit(ReduceCapacity(ReduceCapacity(intNumber)))}{TakeLastDigit(intNumber)}");
+System.Console.WriteLine($"Число, состоящее из первой и третьей цифры трехзначного числа {intNumber}, равно {intTemp}");
